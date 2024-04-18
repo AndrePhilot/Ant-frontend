@@ -1,0 +1,91 @@
+.home-container {
+    position: relative;
+}
+
+.navbar {
+    pointer-events: auto;
+}
+
+.spline-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+.welcome-message {
+    position: absolute;
+    top: 0px;
+    width: 30vw;
+    left: 25px;
+    z-index: 1000; /* Ensure the message is on top of the canvas */
+    color: rgb(41, 95, 198); /* Adjust color as needed */
+    font-family: 'Merriweather Sans', sans-serif; /* Use Merriweather Sans font */
+    font-size: 20px; /* Adjust font size as needed */
+    font-weight: bold; /* Make the font bold */
+    text-align: justify;
+    text-shadow: 
+        -1px -1px 0 #ccc,
+        1px -1px 0 #ccc,
+        -1px 1px 0 #ccc,
+        1px 1px 0 #ccc,
+        0px 2px 2px rgba(255, 255, 255, 0.5); /* Lighter color shadow with smoother edges */
+}
+
+.auth-buttons {
+    position: absolute;
+    left: 25px;
+    top: calc(20px + 250px + 50px); /* Position buttons below the welcoming message with some spacing */
+    z-index: 1000; /* Ensure the buttons are on top of the canvas */
+}
+
+.auth-buttons button {
+    margin-right: 10px;
+}
+
+/* Media queries for responsive font size and visibility */
+@media screen and (max-width: 1200px) {
+    .auth-buttons {
+        top: calc(20px + 300px + 50px); /* Position buttons below the welcoming message with some spacing */
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .welcome-message {
+        font-size: 19px; /* Decrease font size */
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .welcome-message {
+        font-size: 18px; /* Decrease font size */
+    }
+    .auth-buttons {
+        top: calc(20px + 250px + 50px); /* Position buttons below the welcoming message with some spacing */
+    }
+}
+
+@media screen and (max-width: 954px) {
+    .welcome-message {
+        font-size: 15px; /* Decrease font size */
+    }
+}
+
+@media screen and (max-width: 790px) {
+    .welcome-message {
+        display: none; /* Hide paragraph tags */
+    }
+    .auth-buttons {
+        top: calc(20px + 50px + 50px); /* Position buttons below the welcoming message with some spacing */
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .auth-buttons {
+        display: none;
+    }
+}

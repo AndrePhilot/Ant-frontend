@@ -1,0 +1,28 @@
+.searchbar {
+    margin: 20px;
+}
+
+.company-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px; 
+    padding: 5px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    font-family: 'Merriweather Sans', sans-serif;
+    margin: 5px;
+    color: rgb(25, 140, 186);
+}
+
+.company-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 5px;
+    font-family: 'Merriweather Sans', sans-serif;
+}
