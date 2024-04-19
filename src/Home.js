@@ -21,9 +21,9 @@ function Home() {
             {!isLoading && (
                 <div>
                     <div className="welcome-message">
-                        <h1>Welcome to Ant!</h1>
+                        <h1>Welcome to Nutjobs!</h1>
                         <p>Your Gateway to Unimaginable Careers</p>
-                        <p>At Ant, we're just like any other job application platform, except for one thing: we promise you'll never hear back from our companies. It's not that they're ghosting you; they simply don't exist in the first place! Try now!</p>
+                        <p>At Nutjobs, we're just like any other job application platform, except for one thing: we promise you'll never hear back from our companies. It's not that they're ghosting you; they simply don't exist in the first place! Try now!</p>
                     </div>
                     {authData.token ? (
                         <div className="auth-buttons">

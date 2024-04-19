@@ -12,7 +12,7 @@ function NavBar() {
     return (
         <nav className="navbar navbar-expand-xl bg-primary" data-bs-theme="dark"> 
             <div className="container-fluid">
-                <Link className="navbar-brand text-light" to="/"><b>Ant</b></Link>
+                <Link className="navbar-brand text-light" to="/"><b>Nutjobs</b></Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
