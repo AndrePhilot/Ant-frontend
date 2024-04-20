@@ -24,7 +24,7 @@ function LoginForm() {
 
     return (
         <form className="credentials-form" onSubmit={handleSubmit}>
-            <div className="card bg-secondary mb-3" style={{ maxWidth: "30rem" }}>
+            <div className="card bg-secondary mb-3 p-2" style={{ maxWidth: "30rem" }}>
                 <div className="form-floating mb-3">
                     <input 
                         name="username"

@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar />
+      {authData.username !== null ? <NavBar /> : null}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route 

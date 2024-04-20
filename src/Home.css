@@ -19,73 +19,88 @@
 
 .welcome-message {
     position: absolute;
-    top: 0px;
+    top: 30px;
     width: 30vw;
-    left: 25px;
+    left: 30px;
     z-index: 1000; /* Ensure the message is on top of the canvas */
-    color: rgb(41, 95, 198); /* Adjust color as needed */
-    font-family: 'Merriweather Sans', sans-serif; /* Use Merriweather Sans font */
-    font-size: 20px; /* Adjust font size as needed */
+    font-family: 'Rubik Doodle Shadow', sans-serif; /* Use Merriweather Sans font */
+    font-size: 25px; /* Adjust font size as needed */
     font-weight: bold; /* Make the font bold */
     text-align: justify;
-    text-shadow: 
-        -1px -1px 0 #ccc,
-        1px -1px 0 #ccc,
-        -1px 1px 0 #ccc,
-        1px 1px 0 #ccc,
-        0px 2px 2px rgba(255, 255, 255, 0.5); /* Lighter color shadow with smoother edges */
+}
+
+.custom-card {
+    background-color: rgba(240, 240, 240, 0.5) !important;
+}
+
+.custom-card-text {
+    color: rgb(41, 95, 198); /* Adjust color as needed */
 }
 
 .auth-buttons {
-    position: absolute;
-    left: 25px;
-    top: calc(20px + 250px + 50px); /* Position buttons below the welcoming message with some spacing */
-    z-index: 1000; /* Ensure the buttons are on top of the canvas */
+    display: flex; /* Use flexbox layout */
+    justify-content: center; /* Center the buttons horizontally */
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    top: 60%;
+    font-family: 'Rubik Doodle Shadow', sans-serif;
 }
 
 .auth-buttons button {
-    margin-right: 10px;
+    margin-left: 10px; /* Adjust spacing between buttons */
+    margin-right: 10px; /* Adjust spacing between buttons */
+    width: 200px;
+    height: 70px;
+    font-size: x-large;
 }
+
 
 /* Media queries for responsive font size and visibility */
-@media screen and (max-width: 1200px) {
-    .auth-buttons {
-        top: calc(20px + 300px + 50px); /* Position buttons below the welcoming message with some spacing */
-    }
-}
-
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1420px) {
     .welcome-message {
-        font-size: 19px; /* Decrease font size */
+        font-size: 20px;
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 894px) {
     .welcome-message {
-        font-size: 18px; /* Decrease font size */
-    }
-    .auth-buttons {
-        top: calc(20px + 250px + 50px); /* Position buttons below the welcoming message with some spacing */
+        font-size: 18px;
     }
 }
 
-@media screen and (max-width: 954px) {
-    .welcome-message {
-        font-size: 15px; /* Decrease font size */
-    }
-}
-
-@media screen and (max-width: 790px) {
-    .welcome-message {
-        display: none; /* Hide paragraph tags */
-    }
-    .auth-buttons {
-        top: calc(20px + 50px + 50px); /* Position buttons below the welcoming message with some spacing */
-    }
-}
-
-@media screen and (max-width: 470px) {
-    .auth-buttons {
+@media screen and (max-width: 789px) {
+    .welcome-message p {
         display: none;
     }
 }
+
+@media screen and (max-width: 376px) {
+    .welcome-message {
+        display: none;
+    }
+}
+
+.loader-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.loader {
+    margin: auto;
+    border: 20px solid #EAF0F6;
+    border-radius: 50%;
+    border-top: 20px solid rgb(41, 95, 198);
+    width: 200px;
+    height: 200px;
+    animation: spinner 4s linear infinite;
+  }
+
+  @keyframes spinner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }  
