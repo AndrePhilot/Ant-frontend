@@ -3,6 +3,7 @@ import { useAuth } from './hooks/useAuth';
 import useFields from './hooks/useFields';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import LoadingOnSubmission from './LoadingOnSubmission';
 
 function Profile() {
     const { authData, setAuthData } = useAuth();
@@ -14,16 +15,20 @@ function Profile() {
         email: authData.email
     });
     const [showAlert, setShowAlert] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            setIsLoading(true);
             await JoblyApi.patchUser(formData, authData, setAuthData);
+            setIsLoading(false);
             navigate('/profile');
             setShowAlert({ success: true, message: "Changes saved successfully!"});
             setTimeout(() => setShowAlert(false), 3000);
             setIsFormDirty(false);
         } catch (error) {
+            setIsLoading(false);
             setShowAlert({ success: false, message: error });
         }
     };
@@ -104,13 +109,7 @@ function Profile() {
                             htmlFor="lastNameInput">
                                 Last Name</label>
                     </div>
-                    <button 
-                        type="submit" 
-                        className="btn btn-primary"
-                        disabled={!isFormDirty}
-                    >
-                        Save Changes
-                    </button>
+                    <LoadingOnSubmission isLoading={isLoading} buttonText={"Save Changes"} isFormDirty={isFormDirty} />
                 </div>
             </form>
     </div>

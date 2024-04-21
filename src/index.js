@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import './bootstrap.min.css';
 import { AuthProvider } from './hooks/useAuth';
 import { BrowserRouter } from 'react-router-dom';
+import { unregister } from './serviceWorker';
 
 import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/collapse';
@@ -23,3 +24,5 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+unregister();

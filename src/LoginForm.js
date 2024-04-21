@@ -3,6 +3,8 @@ import { useAuth } from './hooks/useAuth';
 import useFields from './hooks/useFields';
 import { useNavigate } from 'react-router-dom';
 import './Form.css'
+import { useState } from 'react';
+import LoadingOnSubmission from './LoadingOnSubmission';
 
 function LoginForm() {
     const { setAuthData } = useAuth();
@@ -11,13 +13,17 @@ function LoginForm() {
         username: "",
         password: ""
     });
+    const [isLoading, setIsLoading] = useState(false);
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            setIsLoading(true);
             await JoblyApi.logUser(formData, setAuthData);
             navigate('/');
         } catch (error) {
+            setIsLoading(false);
             console.error("Error:", error);
         }
     };
@@ -57,12 +63,7 @@ function LoginForm() {
                         htmlFor="passwordInput">
                             Password</label>
                 </div>
-                <button 
-                    type="submit" 
-                    className="btn btn-primary"
-                >
-                    Submit
-                </button>
+                <LoadingOnSubmission isLoading={isLoading} buttonText={"Submit"} />
             </div>
         </form>
     );

@@ -3,6 +3,7 @@ import { useAuth } from './hooks/useAuth';
 import useFields from './hooks/useFields';
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
+import LoadingOnSubmission from './LoadingOnSubmission';
 
 function Signup() {
     const { setAuthData } = useAuth();
@@ -15,14 +16,17 @@ function Signup() {
         email: ""
     });
     const [showAlert, setShowAlert] = useState({ containsAlert: false, message: null });
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            setIsLoading(true);
             await JoblyApi.postUser(formData, setAuthData);
             resetFormData();
             navigate('/');
         } catch (error) {
+            setIsLoading(false);
             setShowAlert({ containsAlert: true, message: error });
         }
     };
@@ -122,12 +126,7 @@ function Signup() {
                         htmlFor="lastNameInput">
                             Last Name</label>
                 </div>
-                <button 
-                    type="submit" 
-                    className="btn btn-primary"
-                >
-                    Submit
-                </button>
+                <LoadingOnSubmission isLoading={isLoading} buttonText={"Submit"} />
             </div>
         </form>
         </>
