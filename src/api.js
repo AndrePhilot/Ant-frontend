@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = "https://nutjobs.onrender.com";
+const BASE_URL = "http://nutjobs-node-env.eba-vgqk45qy.us-east-1.elasticbeanstalk.com/";
 
 /** API Class.
  *
