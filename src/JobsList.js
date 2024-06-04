@@ -27,6 +27,7 @@ function JobsList() {
 
     return (
         <div>
+            <h1 className="title">List of jobs</h1>
             <div className="searchbar">
                 <Searchbar 
                     fetchJobs={fetchJobs}
