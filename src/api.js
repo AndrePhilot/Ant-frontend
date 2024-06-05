@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const BASE_URL = "http://localhost:3001";
-// http://nutjobs-node-env.eba-vgqk45qy.us-east-1.elasticbeanstalk.com
+const BASE_URL = "http://nutjobs-node-env.eba-vgqk45qy.us-east-1.elasticbeanstalk.com" 
+//"http://localhost:3001";
 
 /** API Class.
  *
