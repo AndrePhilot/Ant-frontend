@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const BASE_URL = "http://nutjobs-node-env.eba-vgqk45qy.us-east-1.elasticbeanstalk.com";
+const BASE_URL = "http://localhost:3001";
+// http://nutjobs-node-env.eba-vgqk45qy.us-east-1.elasticbeanstalk.com
 
 /** API Class.
  *
@@ -11,13 +12,14 @@ const BASE_URL = "http://nutjobs-node-env.eba-vgqk45qy.us-east-1.elasticbeanstal
  */
 
 export default class JoblyApi {
-  static async request(endpoint, data = {}, method = "get", token = null) {
+  static async request(endpoint, data = {}, method = "get") {
     console.debug("API Call:", endpoint, data, method);
 
     //there are multiple ways to pass an authorization token, this is how you pass it in the header.
     //this has been provided to show you another way to pass the token. you are only expected to read this code for this project.
     const url = `${BASE_URL}/${endpoint}`;
     const headers = {};
+    const token = localStorage.getItem('jwtToken');
     if (token) {
       headers.Authorization = `Bearer ${token}`;
     }
@@ -68,22 +70,34 @@ export default class JoblyApi {
 
   static async postUser(data, setAuthData) {
     let method = "post";
-    const res = await this.request(`auth/register/`, data, method);
-    const { token } = res;
-    const res2 = await this.request(`users/${data.username}`, {}, "get", token);
-    const { username, firstName, lastName, email, isAdmin, applications } = res2.user;
-    setAuthData({ token, username, firstName, lastName, email, isAdmin, applications });
+    try {
+      const res = await this.request(`auth/register/`, data, method);
+      const { token } = res;
+      localStorage.setItem('jwtToken', token);
+  
+      const userRes = await this.request(`users/${data.username}`, {}, "get", token);
+      const { username, firstName, lastName, email, isAdmin, applications } = userRes.user;
+      setAuthData({ token, username, firstName, lastName, email, isAdmin, applications });
+    } catch (error) {
+      throw error;
+    }
   }
 
   /** Login users. */
 
   static async logUser(data, setAuthData) {
     let method = "post";
-    const res1 = await this.request(`auth/token/`, data, method);
-    const { token } = res1;
-    const res2 = await this.request(`users/${data.username}`, {}, "get", token);
-    const { username, firstName, lastName, email, isAdmin, applications } = res2.user;
-    setAuthData({ token, username, firstName, lastName, email, isAdmin, applications });
+    try {
+      const res1 = await this.request(`auth/token/`, data, method);
+      const { token } = res1;
+      localStorage.setItem('jwtToken', token);
+
+      const res2 = await this.request(`users/${data.username}`, {}, "get", token);
+      const { username, firstName, lastName, email, isAdmin, applications } = res2.user;
+      setAuthData({ token, username, firstName, lastName, email, isAdmin, applications });
+    } catch (error) {
+      throw error;
+    }
   }
 
   /** Patch user. */
