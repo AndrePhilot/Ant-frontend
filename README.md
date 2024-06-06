@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Nutjobs
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+[Nutjobs](http://nutjobs-frontend.s3-website.us-east-2.amazonaws.com/) is a web application that allows users to view and interact with company and job listings. This is its frontend repo. Please, visit [the backend repo](https://github.com/AndrePhilot/Ant-backend) for a full experience.
 
-In the project directory, you can run:
+## Technologies Used
 
-### `npm start`
+- **Frontend**: React.js
+- **State Management**: React Context API
+- **Routing**: React Router
+- **Backend**: Node.js with Express
+- **Database**: AWS RDS (PostgreSQL)
+- **Authentication**: JWT (JSON Web Tokens)
+- **Styling**: Bootswatch, Google Fonts, FontAwesome
+- **3D Elements**: Spline API
+- **Testing**: Jest
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Component Hierarchy
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The React component hierarchy is structured as follows:
 
-### `npm test`
+- **BrowserRouter**: Wraps the entire application to handle routing.
+  - **AuthProvider**: Provides the authentication context to manage user state.
+    - **App**: The root component that includes all other components and handles the main routing logic.
+      - **NavBar**: A navigation bar component, usually visible on all pages.
+      - **Home**: The home page of the application.
+      - **CompanyList**: Displays a list of companies.
+      - **CompanyDetail**: Shows detailed information about a specific company.
+      - **JobsList**: Displays a list of job postings.
+      - **LoginForm**: A form component for user login.
+      - **Signup**: A form component for user registration.
+      - **Profile**: Displays the user’s profile information.
+        - **Searchbar**: A search bar component used in both CompanyList and JobsList for filtering.
+        - **JobCard**: A card component displaying job details.
+        - **LoadingOnSubmission**: A loading spinner or message displayed while data is being submitted or fetched.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Global State Management
 
-### `npm run build`
+The current user state is managed by the `AuthProvider` component, which uses the `AuthContext` to share authentication data throughout the application. The `AuthProvider` initializes the authentication state from localStorage or with default values and uses `useState` to manage state changes, persisting them to localStorage with `useEffect`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To get a copy of the project up and running on your local machine, follow these steps:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
 
-### `npm run eject`
+- Node.js and npm installed
+- An AWS RDS instance with MySQL database
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   git clone <repository-url>
+   cd <repository-directory>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. Install dependencies:
+   npm install
 
-## Learn More
+### Running the Application
+To start the application, run:
+    npm start
+This will start the development server, and you can access the application at `http://localhost:3000`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Running Tests
+To run the tests, use:
+    npm test
+This will execute the test suite using Jest and output the results to the console.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Contributing
+Feel free to fork the repository and submit pull requests.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### About the Developer
+Hi, I'm [Andre Philot](https://andrephilot.github.io/portfolio/), an international teacher and developer.
