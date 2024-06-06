@@ -46,7 +46,6 @@ To get a copy of the project up and running on your local machine, follow these 
 ### Prerequisites
 
 - Node.js and npm installed
-- An AWS RDS instance with MySQL database
 
 ### Installation
 
