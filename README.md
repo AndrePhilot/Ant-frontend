@@ -62,6 +62,11 @@ To get a copy of the project up and running on your local machine, follow these 
     npm install
 
 ### Running the Application
+
+Change the BASE_URL variable inside src/api.js to: 
+
+    "http://localhost:3001"
+
 To start the application, run:
 
     npm start
@@ -75,8 +80,14 @@ To run the tests, use:
 
 This will execute the test suite using Jest and output the results to the console.
 
-### Contributing
+### Build Stage
+
+To build the application for production, run:
+
+    npm run build
+
+## Contributing
 Feel free to fork the repository and submit pull requests.
 
-### About the Developer
+## About the Developer
 Hi, I'm [Andre Philot](https://andrephilot.github.io/portfolio/), an international teacher and developer.
