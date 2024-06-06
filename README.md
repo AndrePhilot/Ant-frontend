@@ -65,7 +65,7 @@ To get a copy of the project up and running on your local machine, follow these 
 
 Change the BASE_URL variable inside src/api.js to: 
 
-    "http://localhost:3001"
+    "http://localhost:3001"s
 
 To start the application, run:
 
@@ -80,7 +80,7 @@ To run the tests, use:
 
 This will execute the test suite using Jest and output the results to the console.
 
-### Build Stage
+## Build Stage
 
 To build the application for production, run:
 
