@@ -61,7 +61,7 @@ To get a copy of the project up and running on your local machine, follow these 
 
 Change the BASE_URL variable inside src/api.js to: 
 
-    "http://localhost:3001"s
+    "http://localhost:3001"
 
 To start the application, run:
 
