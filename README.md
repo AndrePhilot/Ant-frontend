@@ -9,7 +9,6 @@
 - **Frontend**: React.js
 - **State Management**: React Context API
 - **Routing**: React Router
-- **Backend**: Node.js with Express
 - **Styling**: Bootswatch, Google Fonts, FontAwesome
 - **3D Elements**: Spline API
 - **Testing**: Jest
