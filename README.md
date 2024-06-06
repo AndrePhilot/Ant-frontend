@@ -64,7 +64,6 @@ To get a copy of the project up and running on your local machine, follow these 
 ### Running the Application
 To start the application, run:
 
-    ```bash
     npm start
 
 This will start the development server, and you can access the application at `http://localhost:3000`.
@@ -72,9 +71,8 @@ This will start the development server, and you can access the application at `h
 ### Running Tests
 To run the tests, use:
 
-    ```bash
     npm test
-    
+
 This will execute the test suite using Jest and output the results to the console.
 
 ### Contributing
