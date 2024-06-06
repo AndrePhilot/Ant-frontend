@@ -10,8 +10,6 @@
 - **State Management**: React Context API
 - **Routing**: React Router
 - **Backend**: Node.js with Express
-- **Database**: AWS RDS (PostgreSQL)
-- **Authentication**: JWT (JSON Web Tokens)
 - **Styling**: Bootswatch, Google Fonts, FontAwesome
 - **3D Elements**: Spline API
 - **Testing**: Jest
