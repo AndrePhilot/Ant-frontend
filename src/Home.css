@@ -103,6 +103,13 @@
     animation: spinner 4s linear infinite;
   }
 
+.loading-message {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555;
+    text-align: center;
+}
+
   @keyframes spinner {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
