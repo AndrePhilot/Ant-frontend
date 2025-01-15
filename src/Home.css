@@ -106,8 +106,15 @@
 .loading-message {
     margin-top: 10px;
     font-size: 0.9rem;
-    color: #555;
-    text-align: center;
+    color: #295FC6; /* Text color */
+    background-color: #F8F8F8; /* Light background color */
+    padding: 15px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Rubik Doodle Shadow', sans-serif; /* Custom font */
+    font-weight: bold; /* Bold text */
 }
 
   @keyframes spinner {
